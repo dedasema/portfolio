@@ -22,3 +22,10 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+.gitignore
+pnpm-lock.yaml
+tsconfig.json
+astro.config.mjs
+package.json
+tailwind.config.js
