@@ -1,10 +1,47 @@
 <header
-  class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto"
+  class="flex justify-between items-center py-5 w-full xl:w-[1120px] mx-auto"
 >
-  <nav class="flex flex-wrap justify-center gap-x-10 gap-y-4 opacity-80">
-    <a href="#top" class="w-1/2 text-center md:w-auto">Inicio</a>
-    <a href="#proyectos" class="w-1/2 text-center md:w-auto">Proyectos</a>
-    <a href="#sobre-mi" class="w-1/2 text-center md:w-auto">Sobre mí</a>
-    <a href="#contacto" class="w-1/2 text-center md:w-auto">Contacto</a>
+  <nav
+    id="desktop-menu"
+    class="hidden md:flex flex-wrap justify-center gap-x-10 gap-y-4 opacity-80"
+  >
+    <a href="#top">Inicio</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#sobre-mi" >Sobre mí</a>
+    <a href="#contacto" >Contacto</a>
   </nav>
+  <div class="md:hidden flex items-center">
+    <button id="menu-btn" class="text-white focus:outline-none">
+      <!-- Hamburger Icon -->
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
 </header>
+<div id="mobile-menu" class="hidden flex-col gap-y-4 mt-4 opacity-80">
+  <a href="#top" class="w-full text-center">Inicio</a>
+  <a href="#proyectos" class="w-full text-center">Proyectos</a>
+  <a href="#sobre-mi" class="w-full text-center">Sobre mí</a>
+  <a href="#contacto" class="w-full text-center">Contacto</a>
+</div>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+    mobileMenu?.classList.toggle("flex");
+  });
+</script>
