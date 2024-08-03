@@ -1,0 +1,121 @@
+---
+import HtmlIcon from "./icons/Html.astro";
+import CssIcon from "./icons/Css.astro";
+import JsIcon from "./icons/Js.astro";
+import BootstrapIcon from "./icons/Bootstrap.astro";
+import JqueryIcon from "./icons/Jquery.astro";
+import NodejsIcon from "./icons/NodeJS.astro";
+import PhpIcon from "./icons/Php.astro";
+import LaravelIcon from "./icons/Laravel.astro";
+import SqliteIcon from "./icons/Sqlite.astro";
+import MysqlIcon from "./icons/Mysql.astro";
+
+const TAGS = {
+  HTML: {
+    name: "HTML",
+    class: "text-white border border-red-500",
+    icon: HtmlIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "text-white border border-blue-500",
+    icon: CssIcon,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "text-white border border-yellow-500",
+    icon: JsIcon,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "text-white border border-purple-500",
+    icon: BootstrapIcon,
+  },
+  JQUERY: {
+    name: "jQuery",
+    class: "text-white border border-blue-500",
+    icon: JqueryIcon,
+  },
+  NODEJS: {
+    name: "Node.js",
+    class: "text-white border border-green-500",
+    icon: NodejsIcon,
+  },
+  PHP: {
+    name: "PHP",
+    class: "text-white border border-blue-500",
+    icon: PhpIcon,
+  },
+  LARAVEL: {
+    name: "Laravel",
+    class: "text-white border border-red-500",
+    icon: LaravelIcon,
+  },
+  SQLITE: {
+    name: "SQLite",
+    class: "text-white border border-blue-500",
+    icon: SqliteIcon,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "text-white border border-blue-500",
+    icon: MysqlIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "JAHNISSI - Ministerio de Jóvenes",
+    description:
+      "Website del ministerio de jóvenes JAHNISSI de la Iglesia Fortaleza, con información de eventos, servicios y videos",
+    link: "https://jahnissi.netlify.app",
+    github: "https://github.com/dedasema/website-jahnissi",
+    image: "/public/projects/jahnissi.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
+  },
+  {
+    title: "FORTALEZA - Iglesia Evangélica Anabautista",
+    description:
+      "Website de la Iglesia Cristiana Fortaleza, con información de la iglesia, eventos y contacto",
+    link: "https://fortaleza.vercel.app",
+    github: "https://github.com/dedasema/website-fortaleza",
+    image: "/public/projects/fortaleza.webp",
+    tags: [TAGS.JQUERY, TAGS.BOOTSTRAP, TAGS.NODEJS, TAGS.SQLITE],
+  },
+  {
+    title: "PCSTOCK - Sistema de gestión Inventario",
+    description:
+      "Sistema de gestión de inventario de productos, con registro de productos, categorías, proveedores, ventas, reportes, etc",
+    link: "https://pcstock.vercel.app",
+    github: "https://github.com/dedasema/pcstock",
+    image: "/public/projects/inventario.webp",
+    tags: [TAGS.PHP, TAGS.LARAVEL, TAGS.MYSQL],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, tags, image }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-4 flex-wrap">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-2 px-3`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10 mt-5"
+        src={image}
+        alt={`Foto del proyecto ${image}`}
+      />
+    </article>
+  ))
+}
