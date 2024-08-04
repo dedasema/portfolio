@@ -7,8 +7,8 @@
   >
     <a href="#top">Inicio</a>
     <a href="#proyectos">Proyectos</a>
-    <a href="#sobre-mi" >Sobre mí</a>
-    <a href="#contacto" >Contacto</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#contacto">Contacto</a>
   </nav>
   <div class="md:hidden flex items-center">
     <button id="menu-btn" class="text-white focus:outline-none">
@@ -29,25 +29,32 @@
     </button>
   </div>
 </header>
-<div id="mobile-menu" class="hidden min-h-screen z-10 flex-col gap-y-4 mt-4 opacity-80">
+<div
+  id="mobile-menu"
+  class="hidden min-h-screen z-10 flex-col gap-y-4 mt-4 opacity-80"
+>
   <a href="#top" class="w-full text-center">Inicio</a>
-  <a href="#proyectos" id="navigation" class="w-full text-center">Proyectos</a>
-  <a href="#sobre-mi" id="navigation" class="w-full text-center">Sobre mí</a>
-  <a href="#contacto" id="navigation" class="w-full text-center">Contacto</a>
+  <a href="#proyectos" class="w-full text-center">Proyectos</a>
+  <a href="#sobre-mi" class="w-full text-center">Sobre mí</a>
+  <a href="#contacto" class="w-full text-center">Contacto</a>
 </div>
 
 <script>
   const menuBtn = document.getElementById("menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
-  const navigation = document.getElementById("navigation");
+  const links = mobileMenu?.children;
 
   menuBtn?.addEventListener("click", () => {
     mobileMenu?.classList.toggle("hidden");
     mobileMenu?.classList.toggle("flex");
   });
 
-  navigation?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("hidden");
-    mobileMenu?.classList.toggle("flex");
-  });
+  if (links) {
+    for (const link of links) {
+      link.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+        mobileMenu?.classList.toggle("flex");
+      });
+    }
+  }
 </script>
