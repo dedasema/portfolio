@@ -1,0 +1,102 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import SocialPill from "../components/SocialPill.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Projects from "../components/Projects.astro";
+import ProfileCheck from "../components/icons/ProfileCheck.astro";
+import AboutMe from "../components/AboutMe.astro";
+import CurriculumIcon from "../components/icons/Curriculum.astro";
+---
+
+<Layout
+  title="Portfolio de Dennis - Desarrollador y Programador Web, estudiante de Ingeniería en Sistemas"
+  description="Contrata a Dennis para craer tu sitio web, blog, tienda online, sistema o cualquier proyecto web que tengas en mente"
+>
+  <main class="px-4">
+    <SectionContainer class="py-24">
+      <div class="flex flex-row mb-4">
+        <img
+          class="rounded-full size-12"
+          src="https://avatars.githubusercontent.com/u/112269448?v=4"
+          alt="Dennis Sejas"
+        />
+        <div class="flex justify-center items-center ml-5">
+          <a
+            href="https://www.linkedin.com/in/dennis-sejas/"
+            target="_blank"
+            rel="noopener"
+            class="flex justify-center items-center"
+          >
+            <Badge>Disponible para trabajar</Badge>
+          </a>
+        </div>
+      </div>
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hey, soy Dennis
+      </h1>
+      <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+        Desarrollador Web. Santa Cruz Bolivia, apasionado por la tecnología,
+        aprendiendo cada día para seguir mejorando.
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/dennis-sejas/">
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/dedasema">
+          <GitHubIcon class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="">
+          <MailIcon
+            class="size-4 md:size-6"
+            href="mailto:dedasema734012@gmail.com"
+          />
+          Contáctame
+        </SocialPill>
+        <SocialPill href="https://cv-dennis-sejas.netlify.app">
+          <CurriculumIcon class="size-4 md:size-6" />
+          CV
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+    <SectionContainer id="proyectos">
+      <h2 class="text-4xl font-semibold mb-8 flex gap-x-3 items-center">
+        <CodeIcon class="size-8" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+    <SectionContainer id="sobre-mi">
+      <h2 class="text-4xl font-semibold mb-8 flex gap-x-3 items-center">
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </h2>
+      <AboutMe />
+    </SectionContainer>
+    <SectionContainer id="contacto">
+      <h2 class="text-4xl font-semibold mb-8 flex gap-x-3 items-center">
+        <MailIcon class="size-8" />
+        Contacto
+      </h2>
+      <div class="flex flex-col gap-4">
+        <p class="text-xl">
+          Si tienes alguna pregunta o quieres trabajar conmigo, no dudes en
+          contactarme.
+        </p>
+        <SocialPill href="mailto:dedasema734012@gmail.com">
+          <MailIcon class="size-4" />
+          Contáctame
+        </SocialPill>
+      </div>
+    </SectionContainer>
+  </main>
+</Layout>
